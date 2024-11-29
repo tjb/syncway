@@ -15,5 +15,5 @@ Sync Engine communicates with Core, manages changesets to create parity across a
 
 ## TODO
 - [ ] Create Adapter for SQLite 
-  - [ ] Implement `TrackChanges`
+  - [x] Implement `TrackChanges`
   - [ ] Implement `ApplyChanges`
