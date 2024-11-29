@@ -18,7 +18,7 @@ Sync Engine communicates with Core, manages changesets to create parity across a
   - [x] Implement `TrackChanges`
   - [ ] Implement `ApplyChanges`
 - [x] Create Core Sync Manager
-  - [ ] Implement `NewSyncManager`
+  - [x] Implement `NewSyncManager`
   - [ ] Implement `InitSync`
   - [ ] Implement `sendChangesToEngine`
   - [ ] Implement `listenForChanges`
