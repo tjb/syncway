@@ -14,6 +14,11 @@ Core is a client side manager that will communicate with the sync engine and app
 Sync Engine communicates with Core, manages changesets to create parity across all databases, and broadcast updates.
 
 ## TODO
-- [ ] Create Adapter for SQLite 
+- [x] Create Adapter for SQLite 
   - [x] Implement `TrackChanges`
   - [ ] Implement `ApplyChanges`
+- [x] Create Core Sync Manager
+  - [ ] Implement `NewSyncManager`
+  - [ ] Implement `InitSync`
+  - [ ] Implement `sendChangesToEngine`
+  - [ ] Implement `listenForChanges`
