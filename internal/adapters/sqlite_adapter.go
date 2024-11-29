@@ -93,9 +93,3 @@ func (s *SQLiteAdapter) TrackChanges() ([]core.ChangeSet, error) {
 func (s *SQLiteAdapter) ApplyChanges(changes []core.ChangeSet) error {
 	return nil
 }
-
-// SyncWithEngine
-// Communicate with Sync Engine
-func (s *SQLiteAdapter) SyncWithEngine(serverURL string) error {
-	return nil
-}

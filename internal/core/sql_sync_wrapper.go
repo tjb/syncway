@@ -16,7 +16,4 @@ type SQLSyncWrapper interface {
 
 	// ApplyChanges applies a set of changes to the local database
 	ApplyChanges([]ChangeSet) error
-
-	// SyncWithEngine sends local changes to the sync engine and applies remote changes
-	SyncWithEngine(serverURL string) error
 }
