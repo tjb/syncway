@@ -85,7 +85,29 @@ func NewSQLiteAdapter(connString string) (*SQLiteAdapter, error) {
 // Logic for fetching changes from the changeset table
 func (s *SQLiteAdapter) TrackChanges() ([]core.ChangeSet, error) {
 	// Logic for fetching changes from the changeset table
-	return nil, nil
+	rows, err := s.db.Query("SELECT id, table_name, operation, row_id, timestamp FROM changeset")
+	if err != nil {
+		return nil, fmt.Errorf("failed to query changesets: %w", err)
+	}
+
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		if err != nil {
+			fmt.Printf("failed to close rows: %v", err)
+		}
+	}(rows)
+
+	var changes []core.ChangeSet
+
+	for rows.Next() {
+		var change core.ChangeSet
+		err := rows.Scan(&change.ID, &change.TableName, &change.Operation, &change.RowID, &change.Timestamp)
+		if err != nil {
+			return nil, fmt.Errorf("failed to scan row: %w", err)
+		}
+		changes = append(changes, change)
+	}
+	return changes, nil
 }
 
 // ApplyChanges
