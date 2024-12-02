@@ -84,7 +84,6 @@ func NewSQLiteAdapter(connString string) (*SQLiteAdapter, error) {
 // TrackChanges
 // Logic for fetching changes from the changeset table
 func (s *SQLiteAdapter) TrackChanges() ([]core.ChangeSet, error) {
-	// Logic for fetching changes from the changeset table
 	rows, err := s.db.Query("SELECT id, table_name, operation, row_id, timestamp FROM changeset")
 	if err != nil {
 		return nil, fmt.Errorf("failed to query changesets: %w", err)
