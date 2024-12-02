@@ -11,11 +11,4 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to initialize SQLite adapter: %v", err)
 	}
-
-	//// Example: Using the adapter to track changes
-	//changes, err := adapters
-	//if err != nil {
-	//	log.Fatalf("Failed to track changes: %v", err)
-	//}
-	//fmt.Printf("Tracked changes: %+v\n", changes)
 }

@@ -14,7 +14,7 @@ func NewSyncManager(adapter SQLSyncWrapper, socketUri string) (*SyncManager, err
 	// TODO: Change socketUri
 	conn, _, err := websocket.DefaultDialer.Dial(socketUri, nil)
 	if err != nil {
-		return nil, fmt.Errorf("failed to connect to sync server: %w", err)
+		return nil, fmt.Errorf("failed to connect to sync engine: %w", err)
 	}
 
 	return &SyncManager{
